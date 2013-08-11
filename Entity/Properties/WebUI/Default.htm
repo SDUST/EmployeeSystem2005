@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>无标题页</title>
+    <script language="javascript" type="text/javascript">
+			function CloseWin()
+			{	
+				var Cwin=window.open("Login.aspx","","left=0,top=0,toolbar=no,menubar=no,resizable=yes,scrollbars=yes,status=yes,location=no,directories=no");
+				Cwin.moveTo(0,0);
+				Cwin.resizeTo(screen.availWidth,screen.availHeight);
+				var ua=navigator.userAgent
+				var ie=navigator.appName=="Microsoft Internet Explorer"?true:false
+				if(ie)
+				{
+					var IEversion=parseFloat(ua.substring(ua.indexOf("MSIE ")+5,ua.indexOf(";",ua.indexOf("MSIE "))))
+					if(IEversion< 5.5)
+					{
+						var str  = '<object id=noTipClose classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11">'
+						str += '<param name="Command" value="Close"></object>';
+						document.body.insertAdjacentHTML("beforeEnd", str);
+						document.all.noTipClose.Click();
+					}
+					else
+					{
+						window.opener =null;
+						window.close();
+					}
+				}
+				else
+				{
+					window.close()
+				}
+			}
+		
+    </script>
+</head>
+<body onload="CloseWin()">
+
+</body>
+</html>

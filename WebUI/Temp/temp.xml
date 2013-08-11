@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rects>
+  <DataRow>
+    <rect_date>2008-10-22 0:00:00</rect_date>
+    <rect_cd>16</rect_cd>
+    <rect_name>3</rect_name>
+    <sex>4</sex>
+    <birthday>2008-10-22 0:00:00</birthday>
+    <id_card>222222222222</id_card>
+    <diploma>
+    </diploma>
+    <account_address>
+    </account_address>
+    <标识>不合格</标识>
+  </DataRow>
+</rects>

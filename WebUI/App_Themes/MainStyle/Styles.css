@@ -1,0 +1,149 @@
+/* 新 Web 应用程序项目的默认 CSS Stylesheet */
+
+BODY
+{
+	font-size: 9pt;
+	color: #4B4B4B;
+	line-height: 150%;
+	background-color: #e1f4ee;
+	text-decoration: none;
+}
+TD
+{
+	font-size: 9pt;
+	text-indent: 5px;
+}
+TH
+{
+	font-size: 9pt;
+	font-weight: normal;
+}
+.TD2
+{
+	font-size: 9pt;
+	height: 15pt;
+}
+INPUT
+{
+	font-size: 9pt;
+}
+BUTTON
+{
+	font-size: 9pt;
+	height: 20px;
+}
+SELECT
+{
+	font-size: 9pt;
+	height: 18px;
+	background-color: #efefef;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-top: 1px solid;
+	color: #6a6a6a;
+}
+A
+{
+	color: #0000FF;
+	text-decoration: none;
+}
+DIV
+{
+	SCROLLBAR-FACE-COLOR: #c6ebde;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+	SCROLLBAR-SHADOW-COLOR: #39867b;
+	SCROLLBAR-3DLIGHT-COLOR: #39867b;
+	SCROLLBAR-ARROW-COLOR: #330000;
+	SCROLLBAR-TRACK-COLOR: #e2f3f1;
+	SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+	text-decoration: none;
+}
+.title
+{
+	background: url(    'images\topBar_bg.gif' );
+	height: 22px;
+}
+.border
+{
+	border-right: #39867b 1px solid;
+	border-top: #39867b 1px solid;
+	border-left: #39867b 1px solid;
+	border-bottom: #39867b 1px solid;
+	text-indent: 5px;
+}
+.tdbg
+{
+	background: #D9F0E8;
+}
+.tdbgcenter
+{
+	background: #D9F0E8;
+	text-align: center;
+}
+.tdborder
+{
+	border-right: #39867b 1px solid;
+	border-top: #39867b 1px solid;
+	border-left: #39867b 1px solid;
+	border-bottom: #39867b 1px solid;
+}
+.topbg
+{
+	background-color: #539D93;
+	color: #ffffff;
+	text-align: center;
+}
+.bgcolor
+{
+	background-color: #e1f4ee;
+}
+.INPUT
+{
+	height: 18px;
+	background-color: #efefef;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-top: 1px solid;
+	color: #6a6a6a;
+}
+.textarea
+{
+	background-color: #efefef;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-top: 1px solid;
+	color: #6a6a6a;
+}
+.button
+{
+	height: 18px;
+	background-color: #D7E8DF;
+	border-bottom: 1px solid #658B84;
+	border-left: 1px solid #658B84;
+	border-right: 1px solid #658B84;
+	border-top: 1px solid #658B84;
+}
+.tdwide
+{
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #39867B;
+}
+.tddouble
+{
+	border-right-width: 4px;
+	border-right-style: double;
+}
+.readonly
+{
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-top: 1px solid;
+	/*height: 18px;*/
+	background-color: gainsboro;
+	color: #6a6a6a;
+}

@@ -1,0 +1,23 @@
+﻿<%--
+默认的外观模板。以下外观仅作为示例提供。
+
+1. 命名的控件外观。SkinId 的定义应唯一，因为在同一主题中不允许一个控件类型有重复的 SkinId。
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. 默认外观。未定义 SkinId。在同一主题中每个控件类型只允许有一个默认的控件外观。
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:CheckBox runat="server" style="font-family: SimSun;font-size: 9pt;	color:Black ;text-align:left"/>
+<asp:TextBox  runat="server" style="font-family: SimSun;font-size: 9pt;	color:Black  ;text-align:left"></asp:TextBox>
+<asp:Button runat="server" style="font-size:9pt;	color:Black  ;	text-align:center ;	height:20px;font-family: SimSun;"/>
+<asp:Label  runat="server" style="font-family: SimSun;	font-size: 9pt;	text-align: left;	height: 16px; line-height:16px;	vertical-align:middle;"></asp:Label>
+<asp:DropDownList runat="server" Font-Size=10pt ForeColor=black Font-Names="simsun"  style="border:solid 1px #336699"/>
+<asp:ListBox runat="server"></asp:ListBox>
+<asp:RadioButton  runat="server" style="font-family: SimSun;font-size: 9pt;	color:Black ;text-align:left"/>
+<asp:LinkButton runat="server" style="background-color: transparent;font-family: SimSun;font-size: 9pt;	font-weight:bold;color:blue;text-align: left;text-decoration :none;height : 20px;line-height:20px"/>
+<asp:Menu  runat="server" BackColor="Purple" Orientation="Horizontal" ForeColor="White" Width="100%"/>
+<asp:TreeView runat="server" CssClass="TreeView"/>

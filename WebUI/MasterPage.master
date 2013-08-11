@@ -1,0 +1,432 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MainMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>人事管理系统</title>
+    <style type="text/css">
+.style2 {
+	COLOR: #ff6600
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #c6ebde; BACKGROUND: #39867b; MARGIN: 0px; FONT: 9pt 宋体; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #39867b; SCROLLBAR-3DLIGHT-COLOR: #39867b; SCROLLBAR-ARROW-COLOR: #330000; SCROLLBAR-TRACK-COLOR: #e2f3f1; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; TEXT-DECORATION: none
+}
+TABLE {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+TD {
+	FONT: 12px 宋体
+}
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; VERTICAL-ALIGN: bottom; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+A {
+	FONT: 12px 宋体; COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: underline
+}
+.sec_menu {
+	BORDER-RIGHT: white 1px solid; BACKGROUND: #c6ebde; OVERFLOW: hidden; BORDER-LEFT: white 1px solid; BORDER-BOTTOM: white 1px solid
+}
+.menu_title {
+	
+}
+.menu_title SPAN {
+	FONT-WEIGHT: bold; LEFT: 8px; COLOR: #39867b; POSITION: relative; TOP: 2px
+}
+
+.menu_title3 {
+	
+}
+.menu_title3 SPAN {
+	FONT-WEIGHT: bold; LEFT: 8px; COLOR: #ff0000; POSITION: relative; TOP: 2px
+}
+.menu_title4 {
+	
+}
+.menu_title4 SPAN {
+	FONT-WEIGHT: bold; LEFT: 8px; COLOR: #ff9900; POSITION: relative; TOP: 2px
+}
+.style1 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+		</style>
+
+    <script language="javascript" type="text/javascript">
+    function fPopUppage(page,width,height)
+{
+    window.showModalDialog(page, "", "dialogWidth:" + width + "px; dialogHeight:" + height + "px; status:no; directories:yes;scrollbars:no;Resizable=no; "  );
+}
+
+function showsubmenu(sid)
+{
+
+	
+    whichEl = eval("submenu" + sid);
+    if (whichEl.style.display == "none")
+    {
+        eval("submenu" + sid + ".style.display=\"\";");
+    }
+    else
+    {
+        eval("submenu" + sid + ".style.display=\"none\";");
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../Script/CommonFunction.js"></script>
+
+    <script type="text/javascript" src="../Script/ErrMessage.js"> </script>
+
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+        <table style="height: 100%;">
+            <tr>
+                <td colspan="2" style="height: 78px; background-image: url(/WebUI/images/Head01.jpg)"
+                    valign="top">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                    <table width="960px">
+                        <tr>
+                            <td align="right" valign="middle" style="height: 23px">
+                                <asp:Label ID="lblUser" runat="server" ForeColor="Red"></asp:Label>
+                                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                                <asp:HyperLink ID="HyperLink23" runat="server" NavigateUrl="~/Login.aspx" ForeColor="White">注销</asp:HyperLink>
+                                &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                                <asp:HyperLink ID="HyperLink24" runat="server" NavigateUrl="~/Portal.aspx" ForeColor="White">返回首页</asp:HyperLink>
+                                &nbsp;&nbsp; &nbsp;</td>
+                        </tr>
+                    </table>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 18%; height: 90%" valign="top">
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                    <asp:Panel ScrollBars="auto" runat="server" ID="Panel1" Height="580px" Width="180">
+                        <table cellspacing="0" cellpadding="0" width="158">
+                            <tr>
+                                <td class="menu_title" id="menuTitle1" style="cursor: hand" onclick="showsubmenu(1)">
+                                    <asp:Table ID="Table1" runat="server" BackImageUrl="~/images/Admin_left_6.gif" BorderWidth="0px"
+                                        CellPadding="0" CellSpacing="0" Height="25" Width="100%">
+                                        <asp:TableRow ID="TableRow1" runat="server">
+                                            <asp:TableCell ID="TableCell1" runat="server" Font-Bold="True" ForeColor="#39867B">员工管理</asp:TableCell>
+                                        </asp:TableRow>
+                                    </asp:Table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="submenu1">
+                                    <div class="sec_menu" style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td style="height: 20px">
+                                                    <asp:HyperLink runat="server" ID="HyperLink1" NavigateUrl="~/Employees/empBaseInfo.aspx">员工基本信息</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink26" NavigateUrl="~/Employees\jobDistribute.aspx">工程分配</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink31" NavigateUrl="~/Employees/engineerEvaluate.aspx">工程评价</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink30" NavigateUrl="~/Employees\companyEvaluate.aspx">公司评价</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink29" NavigateUrl="~/Employees\recruitManager.aspx">招聘管理</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink28" NavigateUrl="~/Employees\empMoveQuery.aspx">在籍者移动查询</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink27" NavigateUrl="~/Blank.aspx">组织结构图</asp:HyperLink></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table cellspacing="0" cellpadding="0" width="158">
+                            <tr>
+                                <td class="menu_title" id="menuTitle3" style="cursor: hand" onclick="showsubmenu(3)">
+                                    <asp:Table ID="Table3" runat="server" BackImageUrl="~/images/Admin_left_1.gif" BorderWidth="0px"
+                                        CellPadding="0" CellSpacing="0" Height="25" Width="100%">
+                                        <asp:TableRow ID="TableRow3" runat="server">
+                                            <asp:TableCell ID="TableCell3" runat="server" Font-Bold="True" ForeColor="#39867B">合同管理</asp:TableCell>
+                                        </asp:TableRow>
+                                    </asp:Table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="submenu3">
+                                    <div class="sec_menu" style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink21" NavigateUrl="~/Contract\contractContinueManager.aspx">合同续签管理</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink22" NavigateUrl="~/Contract\ContractFinishWorkAttend.aspx">合同终止考勤查询</asp:HyperLink></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table width="158" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="menu_title" id="menuTitle4" style="cursor: hand" onclick="showsubmenu(4)">
+                                    <asp:Table ID="Table4" runat="server" BackImageUrl="~/images/Admin_left_2.gif" BorderWidth="0px"
+                                        CellPadding="0" CellSpacing="0" Height="25" Width="100%">
+                                        <asp:TableRow ID="TableRow4" runat="server">
+                                            <asp:TableCell ID="TableCell4" runat="server" Font-Bold="True" ForeColor="#39867B">考勤管理</asp:TableCell>
+                                        </asp:TableRow>
+                                    </asp:Table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="submenu4">
+                                    <div class="sec_menu" style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink19" NavigateUrl="~/WorkAttend\reportWorkAttendInfo.aspx">导入考勤数据</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink20" NavigateUrl="~/WorkAttend\addWorkAttendInfo.aspx">补录考勤数据</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink2" NavigateUrl="~/WorkAttend\workAttendDaily.aspx">出勤日报表</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink3" NavigateUrl="~/WorkAttend\overtimeDaily.aspx">加班日报表</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink4" NavigateUrl="~/WorkAttend\workAttendMonthly.aspx">出勤月报表</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink5" NavigateUrl="~/WorkAttend\overtimeMonthlyCount.aspx">月加班统计</asp:HyperLink></td>
+                                            </tr><!--
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink6" NavigateUrl="~/Blank.aspx">加班出勤统计</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink7" NavigateUrl="~/Blank.aspx">半年出勤统计</asp:HyperLink></td>
+                                            </tr>
+                                            -->
+                                        </table>
+                                    </div>
+                                    <div style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table cellspacing="0" cellpadding="0" width="158">
+                            <tr>
+                                <td class="menu_title" id="menuTitle5" style="cursor: hand" onclick="showsubmenu(5)">
+                                    <asp:Table ID="Table5" runat="server" BackImageUrl="~/images/Admin_left_7.gif" BorderWidth="0px"
+                                        CellPadding="0" CellSpacing="0" Height="25" Width="100%">
+                                        <asp:TableRow ID="TableRow5" runat="server">
+                                            <asp:TableCell ID="TableCell5" runat="server" Font-Bold="True" ForeColor="#39867B">离职管理</asp:TableCell>
+                                        </asp:TableRow>
+                                    </asp:Table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="submenu5">
+                                    <div class="sec_menu" style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink8" NavigateUrl="~/Resignation\resignationRegister.aspx">离职登记</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink9" NavigateUrl="~/Resignation\resignEmpQuery.aspx">离职员工查询</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink10" NavigateUrl="~/Resignation\resignWorkAttendQuery.aspx">离职考勤查询</asp:HyperLink></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table cellspacing="0" cellpadding="0" width="158">
+                            <tr>
+                                <td class="menu_title" id="menuTitle6" style="cursor: hand" onclick="showsubmenu(6)">
+                                    <asp:Table ID="Table6" runat="server" BackImageUrl="~/images/Admin_left_3.gif" BorderWidth="0px"
+                                        CellPadding="0" CellSpacing="0" Height="25" Width="100%">
+                                        <asp:TableRow ID="TableRow6" runat="server">
+                                            <asp:TableCell ID="TableCell6" runat="server" Font-Bold="True" ForeColor="#39867B">休假管理</asp:TableCell>
+                                        </asp:TableRow>
+                                    </asp:Table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="submenu6">
+                                    <div class="sec_menu" style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink11" NavigateUrl="~/Blank.aspx">休假登记</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink12" NavigateUrl="~/Blank.aspx">年假查询</asp:HyperLink></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table cellspacing="0" cellpadding="0" width="158">
+                            <tr>
+                                <td class="menu_title" id="menuTitle7" style="cursor: hand" onclick="showsubmenu(7)">
+                                    <asp:Table ID="Table7" runat="server" BackImageUrl="~/images/Admin_left_8.gif" BorderWidth="0px"
+                                        CellPadding="0" CellSpacing="0" Height="25" Width="100%">
+                                        <asp:TableRow ID="TableRow7" runat="server">
+                                            <asp:TableCell ID="TableCell7" runat="server" Font-Bold="True" ForeColor="#39867B">系统管理</asp:TableCell>
+                                        </asp:TableRow>
+                                    </asp:Table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="submenu7">
+                                    <div class="sec_menu" style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink13" NavigateUrl="~/Master/workCalendarSet.aspx?pageFlag=1">工作日历设置</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink14" NavigateUrl="~/Master/workTimeSet.aspx">工作时间设置</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink15" NavigateUrl="~/Master/deptSet.aspx">部门设置</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink16" NavigateUrl="~/Master/dutySet.aspx">职务设置</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink17" NavigateUrl="~/Master/userLimitSet.aspx">用户权限设置</asp:HyperLink></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="20">
+                                                    <asp:HyperLink runat="server" ID="HyperLink18" NavigateUrl="~/Blank.aspx">数据接口设置</asp:HyperLink></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div style="width: 158px">
+                                        <table cellspacing="0" cellpadding="0" width="130" align="center">
+                                            <tr>
+                                                <td height="20">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </td>
+                <td style="height: 90%;" valign="top">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                            <ContentTemplate>
+                                <table align="center" height="100%" id="Table8" width="100%">
+                                    <tr valign="middle">
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+        <!--
+        <div id="doing" style="z-index: 12000; left: 2px; width: 35%; position: absolute;
+            top: 0px; height: 43%" runat=server>
+            <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+                <ProgressTemplate>
+                    <table id="Table2" align="center" height="200" style="filter: alpha(opacity=80);
+                        background-color: #c6ebde" width="320">
+                        <tr valign="middle">
+                            <td align="center" style="width: 316px">
+                                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/clocks.gif" />数据加载中,请等待......
+                            </td>
+                        </tr>
+                    </table>
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+        </div>
+        -->
+    </form>
+</body>
+</html>
